@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMo.Modules.Leads.Domain", "src\modules\leads\MoMo.Modules.Leads.Domain\MoMo.Modules.Leads.Domain.csproj", "{0BB8AD19-ED4D-4DB5-A9D2-5714EA5D89BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{934E4925-8821-4CFB-8B45-383A0E7396B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "src/modules", "{5AD1AB64-E0D0-43C6-BB76-B2FE28C33031}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "leads", "src/modules/leads", "{67573C85-6F94-4AD7-9F8A-89B6CADC4C76}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "firms", "firms", "{9E73B7CB-F436-4AE9-A31D-EA7587578688}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMo.Modules.Firms.Domain", "src\modules\firms\MoMo.Modules.Firms.Domain\MoMo.Modules.Firms.Domain.csproj", "{D5D41649-16A7-4F44-9005-0CE8591E94AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BB8AD19-ED4D-4DB5-A9D2-5714EA5D89BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BB8AD19-ED4D-4DB5-A9D2-5714EA5D89BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BB8AD19-ED4D-4DB5-A9D2-5714EA5D89BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BB8AD19-ED4D-4DB5-A9D2-5714EA5D89BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5D41649-16A7-4F44-9005-0CE8591E94AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5D41649-16A7-4F44-9005-0CE8591E94AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5D41649-16A7-4F44-9005-0CE8591E94AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5D41649-16A7-4F44-9005-0CE8591E94AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5AD1AB64-E0D0-43C6-BB76-B2FE28C33031} = {934E4925-8821-4CFB-8B45-383A0E7396B1}
+		{67573C85-6F94-4AD7-9F8A-89B6CADC4C76} = {5AD1AB64-E0D0-43C6-BB76-B2FE28C33031}
+		{0BB8AD19-ED4D-4DB5-A9D2-5714EA5D89BF} = {67573C85-6F94-4AD7-9F8A-89B6CADC4C76}
+		{9E73B7CB-F436-4AE9-A31D-EA7587578688} = {5AD1AB64-E0D0-43C6-BB76-B2FE28C33031}
+		{D5D41649-16A7-4F44-9005-0CE8591E94AD} = {9E73B7CB-F436-4AE9-A31D-EA7587578688}
+	EndGlobalSection
+EndGlobal
