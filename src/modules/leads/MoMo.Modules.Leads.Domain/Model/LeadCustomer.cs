@@ -1,4 +1,4 @@
-namespace MoMo.Domain.Model;
+namespace MoMo.Modules.Leads.Domain.Model;
 
 internal class LeadCustomer(
     Guid id, 
