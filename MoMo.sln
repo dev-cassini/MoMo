@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "firms", "firms", "{9E73B7CB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMo.Modules.Firms.Domain", "src\modules\firms\MoMo.Modules.Firms.Domain\MoMo.Modules.Firms.Domain.csproj", "{D5D41649-16A7-4F44-9005-0CE8591E94AD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lead-distribution", "lead-distribution", "{86CC4DFA-3E9A-4BA4-BAC4-58CAF199FA0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMo.Modules.LeadDistribution.Domain", "src\modules\lead-distribution\MoMo.Modules.LeadDistribution.Domain\MoMo.Modules.LeadDistribution.Domain.csproj", "{71AF6E7A-E3EC-4F47-8C7F-E40ECCC3A78A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +30,10 @@ Global
 		{D5D41649-16A7-4F44-9005-0CE8591E94AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5D41649-16A7-4F44-9005-0CE8591E94AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5D41649-16A7-4F44-9005-0CE8591E94AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71AF6E7A-E3EC-4F47-8C7F-E40ECCC3A78A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71AF6E7A-E3EC-4F47-8C7F-E40ECCC3A78A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71AF6E7A-E3EC-4F47-8C7F-E40ECCC3A78A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71AF6E7A-E3EC-4F47-8C7F-E40ECCC3A78A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5AD1AB64-E0D0-43C6-BB76-B2FE28C33031} = {934E4925-8821-4CFB-8B45-383A0E7396B1}
@@ -33,5 +41,7 @@ Global
 		{0BB8AD19-ED4D-4DB5-A9D2-5714EA5D89BF} = {67573C85-6F94-4AD7-9F8A-89B6CADC4C76}
 		{9E73B7CB-F436-4AE9-A31D-EA7587578688} = {5AD1AB64-E0D0-43C6-BB76-B2FE28C33031}
 		{D5D41649-16A7-4F44-9005-0CE8591E94AD} = {9E73B7CB-F436-4AE9-A31D-EA7587578688}
+		{86CC4DFA-3E9A-4BA4-BAC4-58CAF199FA0E} = {5AD1AB64-E0D0-43C6-BB76-B2FE28C33031}
+		{71AF6E7A-E3EC-4F47-8C7F-E40ECCC3A78A} = {86CC4DFA-3E9A-4BA4-BAC4-58CAF199FA0E}
 	EndGlobalSection
 EndGlobal
