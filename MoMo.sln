@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lead-distribution", "lead-d
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMo.Modules.LeadDistribution.Domain", "src\modules\lead-distribution\MoMo.Modules.LeadDistribution.Domain\MoMo.Modules.LeadDistribution.Domain.csproj", "{71AF6E7A-E3EC-4F47-8C7F-E40ECCC3A78A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMo.Modules.Firms.Application", "src\modules\firms\MoMo.Modules.Firms.Application\MoMo.Modules.Firms.Application.csproj", "{701B56C5-21EF-4867-816C-F781331F1638}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{71AF6E7A-E3EC-4F47-8C7F-E40ECCC3A78A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71AF6E7A-E3EC-4F47-8C7F-E40ECCC3A78A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71AF6E7A-E3EC-4F47-8C7F-E40ECCC3A78A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{701B56C5-21EF-4867-816C-F781331F1638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{701B56C5-21EF-4867-816C-F781331F1638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{701B56C5-21EF-4867-816C-F781331F1638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{701B56C5-21EF-4867-816C-F781331F1638}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5AD1AB64-E0D0-43C6-BB76-B2FE28C33031} = {934E4925-8821-4CFB-8B45-383A0E7396B1}
@@ -43,5 +49,6 @@ Global
 		{D5D41649-16A7-4F44-9005-0CE8591E94AD} = {9E73B7CB-F436-4AE9-A31D-EA7587578688}
 		{86CC4DFA-3E9A-4BA4-BAC4-58CAF199FA0E} = {5AD1AB64-E0D0-43C6-BB76-B2FE28C33031}
 		{71AF6E7A-E3EC-4F47-8C7F-E40ECCC3A78A} = {86CC4DFA-3E9A-4BA4-BAC4-58CAF199FA0E}
+		{701B56C5-21EF-4867-816C-F781331F1638} = {9E73B7CB-F436-4AE9-A31D-EA7587578688}
 	EndGlobalSection
 EndGlobal

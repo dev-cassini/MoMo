@@ -5,9 +5,13 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
-    
+
     <ItemGroup>
-        <InternalsVisibleTo Include="MoMo.Modules.Firms.Application" />
+      <PackageReference Include="MediatR" Version="12.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MoMo.Modules.Firms.Domain\MoMo.Modules.Firms.Domain.csproj" />
     </ItemGroup>
 
 </Project>
