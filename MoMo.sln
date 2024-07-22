@@ -18,6 +18,24 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMo.Modules.LeadDistributi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMo.Modules.Firms.Application", "src\modules\firms\MoMo.Modules.Firms.Application\MoMo.Modules.Firms.Application.csproj", "{701B56C5-21EF-4867-816C-F781331F1638}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMo.Modules.LeadDistribution.Application", "src\modules\lead-distribution\MoMo.Modules.LeadDistribution.Application\MoMo.Modules.LeadDistribution.Application.csproj", "{8155C67F-7DA5-408E-BF11-2823F4B6BF00}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "building-blocks", "building-blocks", "{3547C7EC-1C7E-41BE-B78F-A6A08E2B6402}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMo.BuildingBlocks.Application", "src\building-blocks\MoMo.BuildingBlocks.Application\MoMo.BuildingBlocks.Application.csproj", "{935A407A-97BA-4F56-84C6-96F8C0B8684A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMo.BuildingBlocks.Domain", "src\building-blocks\MoMo.BuildingBlocks.Domain\MoMo.BuildingBlocks.Domain.csproj", "{34180454-1C0D-4239-A6E7-EE343431FD3B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{ED6D5355-8A73-49F6-AFE5-B02AB1A4E8EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{9F470EEE-20E4-47C3-B597-5B97C14F1869}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lead-distribution", "lead-distribution", "{D91CB901-76B8-41E4-AC22-FF13FB988B59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMo.Modules.LeadDistribution.Application.UnitTests", "test\modules\lead-distribution\MoMo.Modules.LeadDistribution.Application.UnitTests\MoMo.Modules.LeadDistribution.Application.UnitTests.csproj", "{B9FB87E0-866E-4101-BB0A-D72062DFAC88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMo.Modules.LeadDistribution.Builders", "test\modules\lead-distribution\MoMo.Modules.LeadDistribution.Builders\MoMo.Modules.LeadDistribution.Builders.csproj", "{86EAF634-B46D-4880-935E-49727666E32D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +58,26 @@ Global
 		{701B56C5-21EF-4867-816C-F781331F1638}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{701B56C5-21EF-4867-816C-F781331F1638}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{701B56C5-21EF-4867-816C-F781331F1638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8155C67F-7DA5-408E-BF11-2823F4B6BF00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8155C67F-7DA5-408E-BF11-2823F4B6BF00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8155C67F-7DA5-408E-BF11-2823F4B6BF00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8155C67F-7DA5-408E-BF11-2823F4B6BF00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{935A407A-97BA-4F56-84C6-96F8C0B8684A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{935A407A-97BA-4F56-84C6-96F8C0B8684A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{935A407A-97BA-4F56-84C6-96F8C0B8684A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{935A407A-97BA-4F56-84C6-96F8C0B8684A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34180454-1C0D-4239-A6E7-EE343431FD3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34180454-1C0D-4239-A6E7-EE343431FD3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34180454-1C0D-4239-A6E7-EE343431FD3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34180454-1C0D-4239-A6E7-EE343431FD3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9FB87E0-866E-4101-BB0A-D72062DFAC88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9FB87E0-866E-4101-BB0A-D72062DFAC88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9FB87E0-866E-4101-BB0A-D72062DFAC88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9FB87E0-866E-4101-BB0A-D72062DFAC88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86EAF634-B46D-4880-935E-49727666E32D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86EAF634-B46D-4880-935E-49727666E32D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86EAF634-B46D-4880-935E-49727666E32D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86EAF634-B46D-4880-935E-49727666E32D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5AD1AB64-E0D0-43C6-BB76-B2FE28C33031} = {934E4925-8821-4CFB-8B45-383A0E7396B1}
@@ -50,5 +88,13 @@ Global
 		{86CC4DFA-3E9A-4BA4-BAC4-58CAF199FA0E} = {5AD1AB64-E0D0-43C6-BB76-B2FE28C33031}
 		{71AF6E7A-E3EC-4F47-8C7F-E40ECCC3A78A} = {86CC4DFA-3E9A-4BA4-BAC4-58CAF199FA0E}
 		{701B56C5-21EF-4867-816C-F781331F1638} = {9E73B7CB-F436-4AE9-A31D-EA7587578688}
+		{8155C67F-7DA5-408E-BF11-2823F4B6BF00} = {86CC4DFA-3E9A-4BA4-BAC4-58CAF199FA0E}
+		{3547C7EC-1C7E-41BE-B78F-A6A08E2B6402} = {934E4925-8821-4CFB-8B45-383A0E7396B1}
+		{935A407A-97BA-4F56-84C6-96F8C0B8684A} = {3547C7EC-1C7E-41BE-B78F-A6A08E2B6402}
+		{34180454-1C0D-4239-A6E7-EE343431FD3B} = {3547C7EC-1C7E-41BE-B78F-A6A08E2B6402}
+		{9F470EEE-20E4-47C3-B597-5B97C14F1869} = {ED6D5355-8A73-49F6-AFE5-B02AB1A4E8EB}
+		{D91CB901-76B8-41E4-AC22-FF13FB988B59} = {9F470EEE-20E4-47C3-B597-5B97C14F1869}
+		{B9FB87E0-866E-4101-BB0A-D72062DFAC88} = {D91CB901-76B8-41E4-AC22-FF13FB988B59}
+		{86EAF634-B46D-4880-935E-49727666E32D} = {D91CB901-76B8-41E4-AC22-FF13FB988B59}
 	EndGlobalSection
 EndGlobal

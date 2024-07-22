@@ -5,16 +5,14 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
-    
+
     <ItemGroup>
-        <InternalsVisibleTo Include="MoMo.Modules.LeadDistribution.Application" />
         <InternalsVisibleTo Include="MoMo.Modules.LeadDistribution.Application.UnitTests" />
-        <InternalsVisibleTo Include="MoMo.Modules.LeadDistribution.Builders" />
-        <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
     </ItemGroup>
-    
+
     <ItemGroup>
-      <ProjectReference Include="..\..\..\building-blocks\MoMo.BuildingBlocks.Domain\MoMo.BuildingBlocks.Domain.csproj" />
+      <ProjectReference Include="..\..\..\building-blocks\MoMo.BuildingBlocks.Application\MoMo.BuildingBlocks.Application.csproj" />
+      <ProjectReference Include="..\MoMo.Modules.LeadDistribution.Domain\MoMo.Modules.LeadDistribution.Domain.csproj" />
     </ItemGroup>
 
 </Project>
