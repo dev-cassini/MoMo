@@ -1,10 +1,10 @@
 namespace MoMo.Modules.Leads.Domain.Model;
 
-internal class Lead(Guid id, Guid arFirmId, Guid adviserId)
+internal class Lead(Guid id, Adviser adviser)
 {
     internal Guid Id { get; } = id;
-    internal Guid ArFirmId { get; } = arFirmId;
-    internal Guid AdviserId { get; } = adviserId;
+    internal Guid AdviserId { get; } = adviser.Id;
+    internal Adviser Adviser { get; } = adviser;
     
     private readonly List<LeadCustomer> _customers = [];
     internal IReadOnlyList<LeadCustomer> Customers => _customers;

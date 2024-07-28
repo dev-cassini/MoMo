@@ -13,6 +13,11 @@ internal static class ServiceCollectionExtensions
             .AddSingleton(leadRepository)
             .AddSingleton(leadRepository.Object);
         
+        var adviserRepository = new Mock<IAdviserRepository>();
+        serviceCollection
+            .AddSingleton(adviserRepository)
+            .AddSingleton(adviserRepository.Object);
+        
         return serviceCollection;
     }
 }

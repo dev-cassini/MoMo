@@ -1,5 +1,6 @@
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using MoMo.BuildingBlocks.Application.Exceptions;
 using MoMo.Modules.Leads.Application.Commands.Create;
 using MoMo.Modules.Leads.Domain.Model;
 using MoMo.Modules.Leads.Domain.Repositories;
@@ -29,18 +30,45 @@ public class CreateLeadCommandHandlerTests
     {
         _serviceProvider.Dispose();
     }
-
+    
     [Test]
-    public async Task OneLeadIsAddedToRepository()
+    public void WhenAdviserDoesNotExist_ThenBadRequestExceptionIsThrown()
     {
         // Arrange
         var command = new CreateLeadCommand(
-            Guid.NewGuid(),
             Guid.NewGuid(),
             new List<LeadCustomerDto>
             {
                 new("Customer", "One", "customer.one@gmail.com")
             });
+        
+        var adviserRepository = _serviceProvider.GetRequiredService<Mock<IAdviserRepository>>();
+        adviserRepository.Setup(x => x.GetAsync(command.AdviserId, It.IsAny<CancellationToken>()))
+            .ReturnsAsync((Adviser?)null);
+        
+        // Act & Assert
+        Assert.ThrowsAsync<BadRequestExceptions.NotFoundException>(async () =>
+        {
+            var mediator = _serviceProvider.GetRequiredService<IMediator>();
+            await mediator.Send(command);
+        });
+    }
+
+    [Test]
+    public async Task OneLeadIsAddedToRepository()
+    {
+        // Arrange
+        var adviser = new Adviser(Guid.NewGuid(), Guid.NewGuid());
+        var command = new CreateLeadCommand(
+            adviser.Id,
+            new List<LeadCustomerDto>
+            {
+                new("Customer", "One", "customer.one@gmail.com")
+            });
+        
+        var adviserRepository = _serviceProvider.GetRequiredService<Mock<IAdviserRepository>>();
+        adviserRepository.Setup(x => x.GetAsync(command.AdviserId, It.IsAny<CancellationToken>()))
+            .ReturnsAsync(adviser);
         
         // Act
         var mediator = _serviceProvider.GetRequiredService<IMediator>();
@@ -57,13 +85,17 @@ public class CreateLeadCommandHandlerTests
     public async Task CommandIsMappedToLead()
     {
         // Arrange
+        var adviser = new Adviser(Guid.NewGuid(), Guid.NewGuid());
         var command = new CreateLeadCommand(
-            Guid.NewGuid(),
-            Guid.NewGuid(),
+            adviser.Id,
             new List<LeadCustomerDto>
             {
                 new("Bob", "Belcher", "bob.belcher@gmail.com"),
             });
+        
+        var adviserRepository = _serviceProvider.GetRequiredService<Mock<IAdviserRepository>>();
+        adviserRepository.Setup(x => x.GetAsync(command.AdviserId, It.IsAny<CancellationToken>()))
+            .ReturnsAsync(adviser);
         
         // Act & Assert
         var leadRepository = _serviceProvider.GetRequiredService<Mock<ILeadRepository>>();
@@ -72,11 +104,7 @@ public class CreateLeadCommandHandlerTests
                 It.IsAny<CancellationToken>()))
             .Callback((Lead lead, CancellationToken _) =>
             {
-                Assert.Multiple(() =>
-                {
-                    Assert.That(lead.ArFirmId, Is.EqualTo(command.ArFirmId));
-                    Assert.That(lead.AdviserId, Is.EqualTo(command.AdviserId));
-                });
+                Assert.That(lead.AdviserId, Is.EqualTo(command.AdviserId));
             });
         
         var mediator = _serviceProvider.GetRequiredService<IMediator>();
@@ -87,14 +115,18 @@ public class CreateLeadCommandHandlerTests
     public async Task CommandIsMappedToLeadCustomers()
     {
         // Arrange
+        var adviser = new Adviser(Guid.NewGuid(), Guid.NewGuid());
         var command = new CreateLeadCommand(
-            Guid.NewGuid(),
-            Guid.NewGuid(),
+            adviser.Id,
             new List<LeadCustomerDto>
             {
                 new("Bob", "Belcher", "bob.belcher@gmail.com"),
                 new("Linda", "Belcher", "linda.belcher@gmail.com")
             });
+        
+        var adviserRepository = _serviceProvider.GetRequiredService<Mock<IAdviserRepository>>();
+        adviserRepository.Setup(x => x.GetAsync(command.AdviserId, It.IsAny<CancellationToken>()))
+            .ReturnsAsync(adviser);
         
         // Act & Assert
         var leadRepository = _serviceProvider.GetRequiredService<Mock<ILeadRepository>>();

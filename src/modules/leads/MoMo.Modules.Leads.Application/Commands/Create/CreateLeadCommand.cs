@@ -4,7 +4,6 @@ using MoMo.Modules.Leads.Domain.Model;
 namespace MoMo.Modules.Leads.Application.Commands.Create;
 
 internal record CreateLeadCommand(
-    Guid ArFirmId, 
     Guid AdviserId,
     IEnumerable<LeadCustomerDto> LeadCustomers) : IRequest<Guid>;
 
@@ -15,9 +14,9 @@ internal record LeadCustomerDto(
 
 internal static class CreateLeadCommandExtensions
 {
-    internal static Lead ToLead(this CreateLeadCommand command)
+    internal static Lead ToLead(this CreateLeadCommand command, Adviser adviser)
     {
-        var lead = new Lead(Guid.NewGuid(), command.ArFirmId, command.AdviserId);
+        var lead = new Lead(Guid.NewGuid(), adviser);
         foreach (var leadCustomerDto in command.LeadCustomers)
         {
             var leadCustomer = new LeadCustomer(
