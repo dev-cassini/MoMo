@@ -11,6 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\building-blocks\MoMo.BuildingBlocks.Application\MoMo.BuildingBlocks.Application.csproj" />
       <ProjectReference Include="..\MoMo.Modules.Firms.Domain\MoMo.Modules.Firms.Domain.csproj" />
     </ItemGroup>
 
