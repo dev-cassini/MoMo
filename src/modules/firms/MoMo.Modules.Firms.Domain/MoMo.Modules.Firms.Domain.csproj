@@ -9,5 +9,9 @@
     <ItemGroup>
         <InternalsVisibleTo Include="MoMo.Modules.Firms.Application" />
     </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\building-blocks\MoMo.BuildingBlocks.Domain\MoMo.BuildingBlocks.Domain.csproj" />
+    </ItemGroup>
 
 </Project>
