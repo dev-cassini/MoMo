@@ -7,10 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <InternalsVisibleTo Include="MoMo.Modules.Leads.Application" />
         <InternalsVisibleTo Include="MoMo.Modules.Leads.Application.UnitTests" />
-        <InternalsVisibleTo Include="MoMo.Modules.Leads.Builders" />
-        <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\building-blocks\MoMo.BuildingBlocks.Application\MoMo.BuildingBlocks.Application.csproj" />
+      <ProjectReference Include="..\MoMo.Modules.Leads.Domain\MoMo.Modules.Leads.Domain.csproj" />
     </ItemGroup>
 
 </Project>
