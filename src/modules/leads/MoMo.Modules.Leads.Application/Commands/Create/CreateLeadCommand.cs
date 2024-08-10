@@ -3,11 +3,11 @@ using MoMo.Modules.Leads.Domain.Model;
 
 namespace MoMo.Modules.Leads.Application.Commands.Create;
 
-internal record CreateLeadCommand(
+public record CreateLeadCommand(
     Guid AdviserId,
     IEnumerable<LeadCustomerDto> LeadCustomers) : IRequest<Guid>;
 
-internal record LeadCustomerDto(
+public record LeadCustomerDto(
     string FirstName,
     string LastName,
     string EmailAddress);

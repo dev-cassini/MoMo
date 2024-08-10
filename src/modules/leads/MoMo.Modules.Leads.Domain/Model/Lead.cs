@@ -1,6 +1,6 @@
 namespace MoMo.Modules.Leads.Domain.Model;
 
-internal class Lead(Guid id, Adviser adviser)
+public class Lead(Guid id, Adviser adviser)
 {
     internal Guid Id { get; } = id;
     internal Guid AdviserId { get; } = adviser.Id;

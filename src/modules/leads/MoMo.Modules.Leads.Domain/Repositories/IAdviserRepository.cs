@@ -2,7 +2,7 @@ using MoMo.Modules.Leads.Domain.Model;
 
 namespace MoMo.Modules.Leads.Domain.Repositories;
 
-internal interface IAdviserRepository
+public interface IAdviserRepository
 {
-    internal Task<Adviser?> GetAsync(Guid id, CancellationToken cancellationToken);
+    Task<Adviser?> GetAsync(Guid id, CancellationToken cancellationToken);
 }

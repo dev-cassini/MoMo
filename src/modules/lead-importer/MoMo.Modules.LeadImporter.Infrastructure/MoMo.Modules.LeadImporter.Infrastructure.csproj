@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\leads\MoMo.Modules.Leads.Integrations.Inbound.Notifications\MoMo.Modules.Leads.Integrations.Inbound.Notifications.csproj" />
+      <ProjectReference Include="..\MoMo.Modules.LeadImporter.Application\MoMo.Modules.LeadImporter.Application.csproj" />
+    </ItemGroup>
+
+</Project>
