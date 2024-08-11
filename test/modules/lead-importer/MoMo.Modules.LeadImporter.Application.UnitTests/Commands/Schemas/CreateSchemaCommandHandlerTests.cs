@@ -1,6 +1,6 @@
-using System.Text.Json.Nodes;
-using Json.Schema;
 using MoMo.Modules.LeadImporter.Application.Commands.Schemas.Create;
+using MoMo.Modules.LeadImporter.Domain.Repositories;
+using Moq;
 
 namespace MoMo.Modules.LeadImporter.Application.UnitTests.Commands.Schemas;
 
@@ -10,32 +10,35 @@ public class CreateSchemaCommandHandlerTests
     [Test]
     public async Task Test1()
     {
-        var schema = new JsonSchemaBuilder()
-            .Comment("a comment")
-            .Title("A title for my schema")
-            .Type(SchemaValueType.Object)
-            .Properties(
-                ("foo", new JsonSchemaBuilder()
-                    .Type(SchemaValueType.String)
-                ),
-                ("bar", new JsonSchemaBuilder()
-                    .Type(SchemaValueType.Number)
-                )
-            )
-            .Build();
-        
-        var instance = JsonNode.Parse("{\"foo\":\"a value\",\"bar\":\"a value\"}");
-        var results = schema.Evaluate(instance);
-        foreach (var error in results.Errors ?? new Dictionary<string, string>())
-        {
-            Console.WriteLine(error.Key);
-        }
+        // Arrange
+        const string schema = """
+                      {
+                          "$schema": "https://json-schema.org/draft/2019-09/schema",
+                          "type": "object",
+                          "title": "Root Schema",
+                          "required": [
+                              "adviserId",
+                              "test",
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                              "adviserId": {
+                                  "type": "string",
+                                  "title": "The adviserId Schema"
+                              },
+                              "test": {
+                                  "type": "string",
+                                  "title": "The test Schema"
+                              }
+                          }
+                      }
+                      """;
+        var command = new CreateSchemaCommand(schema);
 
-
-
-        // var sut = new CreateSchemaCommandHandler();
+        var schemaRepository = new Mock<ISchemaRepository>();
+        var sut = new CreateSchemaCommandHandler(schemaRepository.Object);
 
         // Act
-        // await sut.Handle(command, CancellationToken.None);
+        await sut.Handle(command, CancellationToken.None);
     }
 }

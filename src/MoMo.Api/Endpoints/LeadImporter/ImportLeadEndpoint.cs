@@ -32,10 +32,8 @@ public static class ImportLeadEndpoint
         // var options = new JsonSerializerOptions(JsonSerializerDefaults.Web);
         // var command = request.Deserialize<ImportLeadCommand>(options);
         
-        // var jObject = JObject.Parse(request.GetRawText());
-        // var command = jObject.ToObject<ImportLeadCommand>();
-
-        var command = new ImportLeadCommandV2(request);
+        var jObject = JObject.Parse(request.GetRawText());
+        var command = new ImportLeadCommand(jObject);
         var response = await mediator.Send(command, cancellationToken);
         return Results.Ok(response);
     }

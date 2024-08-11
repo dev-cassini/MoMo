@@ -1,9 +1,9 @@
-using Json.Schema;
+using Newtonsoft.Json.Schema;
 
 namespace MoMo.Modules.LeadImporter.Domain.Model;
 
-public class Schema(Guid id, JsonSchema jsonSchema)
+public class Schema(Guid id, JSchema jsonSchema)
 {
     public Guid Id { get; } = id;
-    public JsonSchema JsonSchema { get; } = jsonSchema;
+    public JSchema JsonSchema { get; } = jsonSchema;
 }
