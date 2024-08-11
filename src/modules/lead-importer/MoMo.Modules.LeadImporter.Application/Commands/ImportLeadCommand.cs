@@ -1,7 +1,10 @@
+using System.Text.Json;
 using MediatR;
 using MoMo.Modules.LeadImporter.Application.Services;
 
 namespace MoMo.Modules.LeadImporter.Application.Commands;
+
+public record ImportLeadCommandV2(JsonElement Request) : IRequest<ImportLeadResponse>;
 
 public record ImportLeadCommand(
     Guid AdviserId,

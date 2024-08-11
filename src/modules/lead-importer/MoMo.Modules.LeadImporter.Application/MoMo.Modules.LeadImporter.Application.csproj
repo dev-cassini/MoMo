@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\building-blocks\MoMo.BuildingBlocks.Application\MoMo.BuildingBlocks.Application.csproj" />
+      <ProjectReference Include="..\MoMo.Modules.LeadImporter.Domain\MoMo.Modules.LeadImporter.Domain.csproj" />
     </ItemGroup>
 
 </Project>
