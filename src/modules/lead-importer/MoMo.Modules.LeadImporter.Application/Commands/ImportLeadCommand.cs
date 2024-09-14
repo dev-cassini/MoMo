@@ -1,8 +1,8 @@
+using System.Text.Json.Nodes;
 using MediatR;
-using Newtonsoft.Json.Linq;
 
 namespace MoMo.Modules.LeadImporter.Application.Commands;
 
-public record ImportLeadCommand(JObject Request) : IRequest<ImportLeadResponse>;
+public record ImportLeadCommand(JsonNode Request) : IRequest<ImportLeadResponse>;
 
 public record ImportLeadResponse(Guid LeadId);

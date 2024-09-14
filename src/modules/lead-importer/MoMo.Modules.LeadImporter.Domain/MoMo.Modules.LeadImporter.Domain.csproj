@@ -6,8 +6,4 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json.Schema" Version="4.0.1" />
-    </ItemGroup>
-
 </Project>

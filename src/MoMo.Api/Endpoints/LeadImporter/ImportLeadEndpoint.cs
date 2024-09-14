@@ -1,7 +1,7 @@
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using MediatR;
 using MoMo.Modules.LeadImporter.Application.Commands;
-using Newtonsoft.Json.Linq;
 
 namespace MoMo.Api.Endpoints.LeadImporter;
 
@@ -25,15 +25,11 @@ public static class ImportLeadEndpoint
     /// <param name="mediator">Mediator.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     private static async Task<IResult> Handler(
-        JsonElement request,
+        JsonNode request,
         IMediator mediator,
         CancellationToken cancellationToken)
     {
-        // var options = new JsonSerializerOptions(JsonSerializerDefaults.Web);
-        // var command = request.Deserialize<ImportLeadCommand>(options);
-        
-        var jObject = JObject.Parse(request.GetRawText());
-        var command = new ImportLeadCommand(jObject);
+        var command = new ImportLeadCommand(request);
         var response = await mediator.Send(command, cancellationToken);
         return Results.Ok(response);
     }

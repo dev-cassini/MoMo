@@ -1,3 +1,4 @@
+using System.Text.Json;
 using MoMo.Modules.LeadImporter.Application.Commands.Schemas.Create;
 using MoMo.Modules.LeadImporter.Domain.Repositories;
 using Moq;
@@ -33,7 +34,8 @@ public class CreateSchemaCommandHandlerTests
                           }
                       }
                       """;
-        var command = new CreateSchemaCommand(schema);
+        
+        var command = new CreateSchemaCommand(JsonDocument.Parse(schema));
 
         var schemaRepository = new Mock<ISchemaRepository>();
         var sut = new CreateSchemaCommandHandler(schemaRepository.Object);

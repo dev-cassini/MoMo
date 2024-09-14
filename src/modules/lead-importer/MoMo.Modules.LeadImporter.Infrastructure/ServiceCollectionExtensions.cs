@@ -1,5 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using MoMo.Modules.LeadImporter.Application.Services;
+using MoMo.Modules.LeadImporter.Infrastructure.JsonSchemaDotNet;
 using MoMo.Modules.LeadImporter.Infrastructure.Messaging.MediatR;
 
 namespace MoMo.Modules.LeadImporter.Infrastructure;
@@ -15,7 +16,9 @@ public static class ServiceCollectionExtensions
     
     private static IServiceCollection AddServices(this IServiceCollection serviceCollection)
     {
-        serviceCollection.AddScoped<IImportLeadService, ImportLeadService>();
+        serviceCollection
+            .AddScoped<IImportLeadService, ImportLeadService>()
+            .AddSingleton<IJsonValidationService, JsonSchemaDotNetValidationService>();
 
         return serviceCollection;
     }
