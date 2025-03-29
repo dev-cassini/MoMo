@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.OpenApi;
-using Microsoft.OpenApi.Extensions;
 using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi.Writers;
 using MoMo.Modules.LeadImporter.Application.Queries;
 using MoMo.Modules.LeadImporter.Application.Services;
 
@@ -22,10 +21,27 @@ public static class GetOpenApiSpecificationEndpoint
     private static async Task<IResult> Handler(
         [FromServices] GetSchema.IQueryHandler getSchemaQueryHandler,
         [FromServices] IOpenApiService openApiService,
+        HttpContext httpContext,
         CancellationToken cancellationToken)
     {
         var schema = await getSchemaQueryHandler.HandleAsync(cancellationToken);
-        var openApiSchema = openApiService.ConvertSchema(schema);
+        var openApiRequestSchema = openApiService.ConvertSchema(schema);
+        var openApiResponseSchema = new OpenApiSchema
+        {
+            Type = "object",
+            Properties = new Dictionary<string, OpenApiSchema>
+            {
+                {
+                    "leadId", 
+                    new OpenApiSchema
+                    {
+                        Type = "string",
+                        Format = "uuid"
+                    }
+                }
+            }
+        };
+            
         var openApiDocument = new OpenApiDocument
         {
             Info = new OpenApiInfo
@@ -33,15 +49,53 @@ public static class GetOpenApiSpecificationEndpoint
                 Title = "Lead Importer",
                 Description = "Import a lead."
             },
+            Paths = new OpenApiPaths
+            {
+                ["/lead-importer/import"] = new OpenApiPathItem
+                {
+                    Operations = new Dictionary<OperationType, OpenApiOperation>
+                    {
+                        [OperationType.Post] = new()
+                        {
+                            Summary = "Import a lead.",
+                            Responses = new OpenApiResponses
+                            {
+                                ["200"] = new OpenApiResponse
+                                {
+                                    Description = "Success",
+                                    Content = new Dictionary<string, OpenApiMediaType>
+                                    {
+                                        ["application/json"] = new()
+                                        {
+                                            Schema = new OpenApiSchema
+                                            {
+                                                Reference = new OpenApiReference
+                                                {
+                                                    Type = ReferenceType.Schema,
+                                                    Id = "response"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             Components = new OpenApiComponents
             {
                 Schemas = new Dictionary<string, OpenApiSchema>
                 {
-                    { "request", openApiSchema }
+                    { "request", openApiRequestSchema },
+                    { "response", openApiResponseSchema }
                 }
             },
         };
         
-        return Results.Ok(openApiDocument.SerializeAsJson(OpenApiSpecVersion.OpenApi3_0));
+        await using var streamWriter = new StreamWriter(httpContext.Response.Body);
+        var writer = new OpenApiJsonWriter(streamWriter);
+        openApiDocument.SerializeAsV3(writer);
+        return Results.Empty;
     }
 }

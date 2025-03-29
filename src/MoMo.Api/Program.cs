@@ -4,6 +4,10 @@ using MoMo.Modules.LeadImporter.Infrastructure;
 using MoMo.Modules.Leads.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.AllowSynchronousIO = true;
+});
 
 builder.Services
     .AddEndpointsApiExplorer()
