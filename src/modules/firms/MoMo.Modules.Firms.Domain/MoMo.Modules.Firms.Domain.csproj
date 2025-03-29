@@ -8,6 +8,7 @@
     
     <ItemGroup>
         <InternalsVisibleTo Include="MoMo.Modules.Firms.Application" />
+        <InternalsVisibleTo Include="MoMo.Modules.Firms.Infrastructure" />
     </ItemGroup>
     
     <ItemGroup>

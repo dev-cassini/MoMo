@@ -70,6 +70,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMo.Modules.LeadImporter.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMo.Modules.LeadImporter.Infrastructure.UnitTests", "test\modules\lead-importer\MoMo.Modules.LeadImporter.Infrastructure.UnitTests\MoMo.Modules.LeadImporter.Infrastructure.UnitTests.csproj", "{F6521961-85FC-4E60-95C9-D6CBD6E1EC5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMo.Modules.Firms.Infrastructure", "src\modules\firms\MoMo.Modules.Firms.Infrastructure\MoMo.Modules.Firms.Infrastructure.csproj", "{756894B5-012A-4F08-B559-A5D235A9DDC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -168,6 +170,10 @@ Global
 		{F6521961-85FC-4E60-95C9-D6CBD6E1EC5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6521961-85FC-4E60-95C9-D6CBD6E1EC5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6521961-85FC-4E60-95C9-D6CBD6E1EC5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{756894B5-012A-4F08-B559-A5D235A9DDC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{756894B5-012A-4F08-B559-A5D235A9DDC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{756894B5-012A-4F08-B559-A5D235A9DDC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{756894B5-012A-4F08-B559-A5D235A9DDC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5AD1AB64-E0D0-43C6-BB76-B2FE28C33031} = {934E4925-8821-4CFB-8B45-383A0E7396B1}
@@ -203,5 +209,6 @@ Global
 		{AC19B7DE-99A4-4825-9B16-504C522B54FA} = {67573C85-6F94-4AD7-9F8A-89B6CADC4C76}
 		{CA351D38-DD70-478E-B8AB-82B9D814D5D8} = {49CC30FD-AC01-4666-9D30-4EBFF1BCA107}
 		{F6521961-85FC-4E60-95C9-D6CBD6E1EC5F} = {49CC30FD-AC01-4666-9D30-4EBFF1BCA107}
+		{756894B5-012A-4F08-B559-A5D235A9DDC3} = {9E73B7CB-F436-4AE9-A31D-EA7587578688}
 	EndGlobalSection
 EndGlobal

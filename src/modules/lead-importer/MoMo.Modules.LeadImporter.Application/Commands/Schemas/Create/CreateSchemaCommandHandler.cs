@@ -8,7 +8,7 @@ public class CreateSchemaCommandHandler(ISchemaRepository schemaRepository) : IR
 {
     public async Task<Guid> Handle(CreateSchemaCommand request, CancellationToken cancellationToken)
     {
-        var schema = new Schema(Guid.NewGuid(), request.JsonSchema);
+        var schema = new Schema(Guid.NewGuid(), DateTimeOffset.UtcNow, request.JsonSchema);
         await schemaRepository.AddAsync(schema, cancellationToken);
 
         return schema.Id;

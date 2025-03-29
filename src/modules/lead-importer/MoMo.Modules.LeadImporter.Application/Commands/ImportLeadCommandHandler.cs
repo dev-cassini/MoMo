@@ -12,7 +12,7 @@ internal class ImportLeadCommandHandler(
 {
     public async Task<ImportLeadResponse> Handle(ImportLeadCommand command, CancellationToken cancellationToken)
     {
-        var schema = await schemaRepository.GetSchemaAsync(cancellationToken);
+        var schema = await schemaRepository.GetAsync(cancellationToken);
         var (isValid, _) = jsonValidationService.Validate(command.Request, schema);
         if (isValid is false)
         {

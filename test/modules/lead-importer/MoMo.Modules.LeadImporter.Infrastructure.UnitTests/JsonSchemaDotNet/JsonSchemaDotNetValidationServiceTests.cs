@@ -49,7 +49,7 @@ public class JsonSchemaDotNetValidationServiceTests
     public void ValidatorHandlesPascalCaseRequest()
     {
         // Arrange
-        var schema = new Schema(Guid.NewGuid(), _albumJsonSchema);
+        var schema = new Schema(Guid.NewGuid(), DateTimeOffset.UtcNow, _albumJsonSchema);
         var sut = new JsonSchemaDotNetValidationService();
         var testRequest = new Album(
             "Speakerboxxx",
@@ -76,7 +76,7 @@ public class JsonSchemaDotNetValidationServiceTests
     public void ValidatorHandlesCamelCaseRequest()
     {
         // Arrange
-        var schema = new Schema(Guid.NewGuid(), _albumJsonSchema);
+        var schema = new Schema(Guid.NewGuid(), DateTimeOffset.UtcNow, _albumJsonSchema);
         var sut = new JsonSchemaDotNetValidationService();
         var testRequest = new Album(
             "Speakerboxxx",
@@ -103,7 +103,7 @@ public class JsonSchemaDotNetValidationServiceTests
     public void ValidatorHandlesSnakeCaseLowerRequest()
     {
         // Arrange
-        var schema = new Schema(Guid.NewGuid(), _albumJsonSchema);
+        var schema = new Schema(Guid.NewGuid(), DateTimeOffset.UtcNow, _albumJsonSchema);
         var sut = new JsonSchemaDotNetValidationService();
         var testRequest = new Album(
             "Speakerboxxx",
@@ -130,7 +130,7 @@ public class JsonSchemaDotNetValidationServiceTests
     public void ValidatorHandlesSnakeCaseUpperRequest()
     {
         // Arrange
-        var schema = new Schema(Guid.NewGuid(), _albumJsonSchema);
+        var schema = new Schema(Guid.NewGuid(), DateTimeOffset.UtcNow, _albumJsonSchema);
         var sut = new JsonSchemaDotNetValidationService();
         var testRequest = new Album(
             "Speakerboxxx",
@@ -157,7 +157,7 @@ public class JsonSchemaDotNetValidationServiceTests
     public void ValidatorHandlesKebabCaseLowerRequest()
     {
         // Arrange
-        var schema = new Schema(Guid.NewGuid(), _albumJsonSchema);
+        var schema = new Schema(Guid.NewGuid(), DateTimeOffset.UtcNow, _albumJsonSchema);
         var sut = new JsonSchemaDotNetValidationService();
         var testRequest = new Album(
             "Speakerboxxx",
@@ -184,7 +184,7 @@ public class JsonSchemaDotNetValidationServiceTests
     public void ValidatorHandlesKebabCaseUpperRequest()
     {
         // Arrange
-        var schema = new Schema(Guid.NewGuid(), _albumJsonSchema);
+        var schema = new Schema(Guid.NewGuid(), DateTimeOffset.UtcNow, _albumJsonSchema);
         var sut = new JsonSchemaDotNetValidationService();
         var testRequest = new Album(
             "Speakerboxxx",

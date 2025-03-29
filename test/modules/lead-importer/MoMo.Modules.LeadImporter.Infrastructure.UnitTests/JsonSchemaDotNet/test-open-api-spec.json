@@ -1,0 +1,43 @@
+{
+  "openapi": "3.0.4",
+  "info": { },
+  "paths": { },
+  "components": {
+    "schemas": {
+      "request": {
+        "title": "Album",
+        "required": [
+          "title",
+          "tracks"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "tracks": {
+            "type": "array",
+            "items": {
+              "title": "Track",
+              "required": [
+                "number",
+                "title",
+                "lengthInSeconds"
+              ],
+              "properties": {
+                "number": {
+                  "type": "integer"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "lengthInSeconds": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

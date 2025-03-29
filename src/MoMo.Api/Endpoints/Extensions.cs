@@ -7,7 +7,8 @@ public static class Extensions
     public static WebApplication RegisterEndpoints(this WebApplication webApplication)
     {
         webApplication
-            .RegisterImportLeadEndpoint();
+            .RegisterImportLeadEndpoint()
+            .RegisterGetOpenApiSpecificationEndpoint();
 
         return webApplication;
     }

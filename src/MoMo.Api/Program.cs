@@ -1,4 +1,5 @@
 using MoMo.Api.Endpoints;
+using MoMo.Modules.Firms.Infrastructure;
 using MoMo.Modules.LeadImporter.Infrastructure;
 using MoMo.Modules.Leads.Infrastructure;
 
@@ -10,13 +11,14 @@ builder.Services
     .AddMediatR(configuration =>
     {
         configuration
-            .RegisterServicesFromAssemblyContaining<MoMo.Modules.Firms.Application.Marker>()
-            .RegisterServicesFromAssemblyContaining<MoMo.Modules.LeadDistribution.Application.Marker>()
-            .RegisterServicesFromAssemblyContaining<MoMo.Modules.LeadImporter.Application.Marker>()
-            .RegisterServicesFromAssemblyContaining<MoMo.Modules.Leads.Application.Marker>()
-            .RegisterServicesFromAssemblyContaining<MoMo.Modules.Leads.Integrations.Inbound.Marker>();
+            .RegisterServicesFromAssemblyContaining<MoMo.Modules.Firms.Application.Marker>();
+        // .RegisterServicesFromAssemblyContaining<MoMo.Modules.LeadDistribution.Application.Marker>()
+        // .RegisterServicesFromAssemblyContaining<MoMo.Modules.LeadImporter.Application.Marker>()
+        // .RegisterServicesFromAssemblyContaining<MoMo.Modules.Leads.Application.Marker>()
+        // .RegisterServicesFromAssemblyContaining<MoMo.Modules.Leads.Integrations.Inbound.Marker>();
     })
-    .AddLeadImporterInfrastructureServices()
+    .AddFirmInfrastructureServices()
+    .AddLeadImporterInfrastructure(builder.Configuration)
     .AddLeadInfrastructure();
 
 var app = builder.Build();
@@ -31,6 +33,8 @@ if (app.Environment.IsDevelopment())
 app
     .RegisterEndpoints()
     .UseHttpsRedirection();
+
+app.Services.UseLeadImporterInfrastructure();
 
 app.Run();
 

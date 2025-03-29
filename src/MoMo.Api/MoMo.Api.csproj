@@ -13,6 +13,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\modules\firms\MoMo.Modules.Firms.Application\MoMo.Modules.Firms.Application.csproj" />
+      <ProjectReference Include="..\modules\firms\MoMo.Modules.Firms.Infrastructure\MoMo.Modules.Firms.Infrastructure.csproj" />
       <ProjectReference Include="..\modules\lead-distribution\MoMo.Modules.LeadDistribution.Application\MoMo.Modules.LeadDistribution.Application.csproj" />
       <ProjectReference Include="..\modules\lead-importer\MoMo.Modules.LeadImporter.Application\MoMo.Modules.LeadImporter.Application.csproj" />
       <ProjectReference Include="..\modules\lead-importer\MoMo.Modules.LeadImporter.Infrastructure\MoMo.Modules.LeadImporter.Infrastructure.csproj" />
