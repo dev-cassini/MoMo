@@ -49,6 +49,13 @@ public static class GetOpenApiSpecificationEndpoint
                 Title = "Lead Importer",
                 Description = "Import a lead."
             },
+            Servers = new List<OpenApiServer>
+            {
+                new()
+                {
+                    Url = $"https://{httpContext.Request.Host.Value}"
+                }
+            },
             Paths = new OpenApiPaths
             {
                 ["/lead-importer/import"] = new OpenApiPathItem
@@ -85,6 +92,28 @@ public static class GetOpenApiSpecificationEndpoint
             },
             Components = new OpenApiComponents
             {
+                SecuritySchemes = new Dictionary<string, OpenApiSecurityScheme>
+                {
+                    {
+                        "OAuth2", 
+                        new OpenApiSecurityScheme
+                        {
+                            Type = SecuritySchemeType.OAuth2,
+                            Flows = new OpenApiOAuthFlows
+                            {
+                                ClientCredentials = new OpenApiOAuthFlow
+                                {
+                                    AuthorizationUrl = new Uri("https://localhost:5001/connect/authorize"),
+                                    TokenUrl = new Uri("https://localhost:5001/connect/token"),
+                                    Scopes = new Dictionary<string, string>
+                                    {
+                                        { "lead-importer:import", "Import a lead." }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 Schemas = new Dictionary<string, OpenApiSchema>
                 {
                     { "request", openApiRequestSchema },
